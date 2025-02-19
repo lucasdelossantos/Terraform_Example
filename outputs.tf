@@ -37,3 +37,23 @@ output "ssh_command" {
   description = "SSH command to connect to the EC2 instance"
   value       = "ssh -i ${var.key_path} ubuntu@${module.ec2_instance.ec2_instance_public_ip}"
 }
+
+output "chef_server_id" {
+  description = "The ID of the Chef server"
+  value       = module.chef_server.chef_server_id
+}
+
+output "chef_server_public_ip" {
+  description = "The public IP of the Chef server"
+  value       = module.chef_server.chef_server_public_ip
+}
+
+output "chef_server_ssh_command" {
+  description = "SSH command to connect to the Chef server"
+  value       = "ssh -i ${var.key_path} ubuntu@${module.chef_server.chef_server_public_ip}"
+}
+
+output "chef_server_manage_site" {
+  description = "The URL of the Chef server management console"
+  value       = "https://${module.chef_server.chef_server_public_ip}/login"
+}

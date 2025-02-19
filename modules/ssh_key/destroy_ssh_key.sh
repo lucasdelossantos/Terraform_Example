@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the key name and path
-SSH_KEY_DIR="$(dirname "$0")/.ssh"
+SSH_KEY_DIR="$(dirname "$0")"
 KEY_NAME="tf_user"
 KEY_PATH="$SSH_KEY_DIR/$KEY_NAME"
 

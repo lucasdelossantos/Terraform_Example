@@ -41,3 +41,12 @@ module "ec2_instance" {
   public_access_sg_id = module.security_group.public_access_sg_id
   public_subnet_id = module.vpc.public_subnets[0]
 }
+
+module "chef_server" {
+  source = "./modules/chef_server"
+  chef_server_instance_type = "t2.medium"
+  key_name                  = module.ssh_key.key_name
+  public_access_sg_id       = module.security_group.public_access_sg_id
+  public_subnet_id          = module.vpc.public_subnets[0]
+  chef_server_name          = var.chef_server_name
+}

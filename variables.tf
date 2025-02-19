@@ -79,7 +79,7 @@ variable "ec2_instance_type" {
 variable "public_key_path" {
   description = "The path to the public key file"
   type        = string
-  default     = ".ssh/tf_user.pub"  # Replace with the actual path to your public key file
+  default     = "tf_user.pub"  # Replace with the actual path to your public key file
 }
 
 variable "key_name" {
@@ -91,7 +91,7 @@ variable "key_name" {
 variable "key_path" {
   description = "The path to create key pair"
   type        = string
-  default     = "modules/ssh_key/.ssh/tf_user"  # Replace with the actual path to your private key file
+  default     = "modules/ssh_key/tf_user"  # Replace with the actual path to your private key file
   
 }
 
@@ -99,4 +99,10 @@ variable "email" {
   description = "The email address to associate with the SSH key"
   type        = string
   default     = "lucas.delossantos@snhu.edu"  # Replace with your actual email address
+}
+
+variable "chef_server_name" {
+  description = "Name tag for the Chef server instance"
+  type        = string
+  default     = "tf_example_chef_server"
 }
